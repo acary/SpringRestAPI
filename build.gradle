@@ -1,0 +1,62 @@
+buildscript {
+	repositories {
+		mavenLocal()
+		jcenter()
+	}
+	dependencies {
+		classpath("net.serenity-bdd:serenity-gradle-plugin:2.0.91")
+	}
+}
+
+plugins {
+	id 'org.springframework.boot' version '2.2.5.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+}
+
+repositories {
+	mavenCentral()
+	jcenter()
+}
+
+group = 'com.webapp'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'net.serenity-bdd.aggregator'
+
+ext {
+	slf4jVersion = '1.7.7'
+	serenityCoreVersion = '2.0.91'
+	junitVersion = '4.12'
+	assertJVersion = '3.8.0'
+	logbackVersion = '1.2.3'
+}
+
+dependencies {
+	compile "ch.qos.logback:logback-classic:${logbackVersion}"
+
+	testCompile "net.serenity-bdd:serenity-core:${serenityCoreVersion}",
+			"net.serenity-bdd:serenity-junit:${serenityCoreVersion}",
+			"junit:junit:${junitVersion}",
+			"org.assertj:assertj-core:${assertJVersion}"
+
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+}
+gradle.startParameter.continueOnFailure = true
+
+test {
+	testLogging.showStandardStreams = true
+	systemProperties System.getProperties()
+}
+
+test.finalizedBy(aggregate)
