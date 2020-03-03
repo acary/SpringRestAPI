@@ -27,4 +27,14 @@ public class RestApiController {
         return new Greeting(counter.incrementAndGet(), String.format(template, name));
     }
 
+    // Sale
+
+    @GetMapping("/sale")
+    public Sale sale() {
+
+        Sale newOrder;
+        newOrder = new Sale(100);
+        return newOrder;
+    }
+
 }
