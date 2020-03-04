@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "23856f61-32db-4347-a181-d8de07a8feda",
+		"name": "CF SpringRestAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://springrestapi-fantastic-fossa-ko.cfapps.io/hello",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://springrestapi-fantastic-fossa-ko.cfapps.io/hello",
+					"protocol": "https",
+					"host": [
+						"springrestapi-fantastic-fossa-ko",
+						"cfapps",
+						"io"
+					],
+					"path": [
+						"hello"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://springrestapi-fantastic-fossa-ko.cfapps.io/greeting",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://springrestapi-fantastic-fossa-ko.cfapps.io/greeting",
+					"protocol": "https",
+					"host": [
+						"springrestapi-fantastic-fossa-ko",
+						"cfapps",
+						"io"
+					],
+					"path": [
+						"greeting"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://springrestapi-fantastic-fossa-ko.cfapps.io/products",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://springrestapi-fantastic-fossa-ko.cfapps.io/products",
+					"protocol": "https",
+					"host": [
+						"springrestapi-fantastic-fossa-ko",
+						"cfapps",
+						"io"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://springrestapi-fantastic-fossa-ko.cfapps.io/products",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"id\": \"3\",\n        \"name\": \"Turmeric\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://springrestapi-fantastic-fossa-ko.cfapps.io/products",
+					"protocol": "https",
+					"host": [
+						"springrestapi-fantastic-fossa-ko",
+						"cfapps",
+						"io"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://springrestapi-fantastic-fossa-ko.cfapps.io/products/3",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"name\": \"Turmeric with Black Pepper\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://springrestapi-fantastic-fossa-ko.cfapps.io/products/3",
+					"protocol": "https",
+					"host": [
+						"springrestapi-fantastic-fossa-ko",
+						"cfapps",
+						"io"
+					],
+					"path": [
+						"products",
+						"3"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
