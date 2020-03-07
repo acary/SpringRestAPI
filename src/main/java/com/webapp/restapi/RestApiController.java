@@ -18,6 +18,18 @@ import com.webapp.restapi.services.ProductService;
 @RestController
 public class RestApiController {
 
+    // Task
+    @GetMapping("/task")
+    public Task task() {
+
+        final Task task = new Task.Builder()
+                .data("First")
+                .num(001)
+                .build();
+
+        return task;
+    }
+
     // Hello
     @GetMapping("/hello")
     public String hello() {
