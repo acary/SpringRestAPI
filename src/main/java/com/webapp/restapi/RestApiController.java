@@ -18,6 +18,18 @@ import com.webapp.restapi.services.ProductService;
 @RestController
 public class RestApiController {
 
+    // Index
+    @GetMapping("/")
+    public Task project() {
+
+        final Task project = new Task.Builder()
+                .data("Automation Test Suite for REST APIs")
+                .num(001)
+                .build();
+
+        return project;
+    }
+
     // Task
     @GetMapping("/task")
     public Task task() {
