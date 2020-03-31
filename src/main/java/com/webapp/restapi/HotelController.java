@@ -1,6 +1,5 @@
 package com.webapp.restapi;
 
-import com.querydsl.core.types.dsl.BooleanExpression;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
@@ -24,18 +23,23 @@ public class HotelController {
         return hotels;
     }
 
-    @PutMapping
-    public void insert(@RequestBody Hotel hotel){
-        this.hotelRepository.insert(hotel);
-    }
-
     @PostMapping
-    public void update(@RequestBody Hotel hotel){
+    public void insert(@RequestBody Hotel hotel){
         this.hotelRepository.save(hotel);
     }
 
+    @PutMapping
+    public void update(@RequestBody Hotel hotel){
+        this.hotelRepository.insert(hotel);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id") Hotel id){
+        this.hotelRepository.delete(id);
+    }
+
     @GetMapping("/{id}")
-    public Optional<Hotel> getById(@PathVariable("id") String id){
+    public Optional<Hotel> getById(@PathVariable("id") Hotel id){
         Optional<Hotel> hotel = this.hotelRepository.findById(id);
 
         return hotel;
