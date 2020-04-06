@@ -48,4 +48,9 @@ public class Hotel {
     public List<Review> getReviews() {
         return reviews;
     }
+
+    public static boolean check() {
+        boolean b = true;
+        return b;
+    }
 }

@@ -6,29 +6,25 @@ import net.thucydides.core.annotations.Steps;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-@RunWith(SerenityRunner.class)
-@Narrative(text={"Test product"})
 
-public class ProductChecker {
+@RunWith(SerenityRunner.class)
+@Narrative(text={"Test hotel"})
+
+public class HotelChecker {
 
     @Steps
-    ProductSteps product;
+    HotelSteps hotel;
 
     @Test
-    public void checkProduct() {
+    public void hotelExists() {
+
         // Given
-        product.checkExists();
+        hotel.checkExists();
 
         // When
-        // Then
-    }
+        hotel.checkExists();
 
-    @Test
-    public void checkProductType() {
-        // Given
-        product.checkType();
-
-        // When
         // Then
+        hotel.checkExists();
     }
 }

@@ -28,4 +28,9 @@ public class Task {
             return new Task(data, num); // etc
         }
     }
+
+    public static boolean check() {
+        boolean b = true;
+        return b;
+    }
 }

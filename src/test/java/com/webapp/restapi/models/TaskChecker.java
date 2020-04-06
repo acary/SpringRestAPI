@@ -2,32 +2,29 @@ package com.webapp.restapi.models;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Narrative;
-import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.Steps;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import com.webapp.restapi.models.*;
-import com.webapp.restapi.repository.*;
 
 @RunWith(SerenityRunner.class)
-@Narrative(text={"Test models"})
+@Narrative(text={"Test tasks"})
 
-public class ModelChecker {
+public class TaskChecker {
 
     @Steps
-    Hotel hotel;
+    TaskSteps task;
 
     @Test
-    public void showHotel() {
+    public void taskExists() {
 
         // Given
-        hotel.getId();
+        task.checkExists();
 
         // When
-        hotel.getName();
+
 
         // Then
-        hotel.getPricePerNight();
+
     }
 }

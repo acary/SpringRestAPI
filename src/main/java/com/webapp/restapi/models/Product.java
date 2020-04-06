@@ -16,4 +16,9 @@ public class Product {
     public void setName(String name) {
         this.name = name;
     }
+
+    public static boolean check() {
+        boolean b = true;
+        return b;
+    }
 }
