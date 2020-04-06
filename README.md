@@ -19,6 +19,7 @@ Launch Spring Boot application in a separate terminal window.
 ## Run tests:
 Run tests in a separate terminal window.
 1. Run: ```./gradlew test```
+2. View Serenity report (see location printed to terminal window): ```file:///.../restapi/target/site/serenity/index.html```
 
 ## Interact using Postman:
 Send API requests to the local and production web applications.

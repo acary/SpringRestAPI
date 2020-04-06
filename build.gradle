@@ -35,10 +35,14 @@ ext {
 	junitVersion = '4.12'
 	assertJVersion = '3.8.0'
 	logbackVersion = '1.2.3'
+	serenity_jbehave_version = "1.5.0"
+	serenity_cucumber_version = "1.1.2"
 }
 
 dependencies {
 	compile "ch.qos.logback:logback-classic:${logbackVersion}"
+	compile("net.serenity-bdd:serenity-cucumber:$serenity_cucumber_version")
+	compile("net.serenity-bdd:serenity-jbehave:$serenity_jbehave_version")
 
 	testCompile "net.serenity-bdd:serenity-core:${serenityCoreVersion}",
 			"net.serenity-bdd:serenity-junit:${serenityCoreVersion}",
@@ -50,6 +54,11 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation("com.querydsl:querydsl-jpa:4.2.1")
 	implementation("com.querydsl:querydsl-apt:4.2.1:jpa")
+	testImplementation 'io.rest-assured:rest-assured:4.3.0'
+	testImplementation 'io.rest-assured:json-path:4.3.0'
+	testImplementation 'io.rest-assured:xml-path:4.3.0'
+	testImplementation 'io.rest-assured:json-schema-validator:4.3.0'
+	testImplementation 'io.rest-assured:spring-mock-mvc:4.3.0'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}

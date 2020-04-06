@@ -1,4 +1,4 @@
-package com.webapp.restapi.steps;
+package com.webapp.restapi.math;
 
 import net.thucydides.core.annotations.Step;
 import static org.assertj.core.api.Assertions.assertThat;

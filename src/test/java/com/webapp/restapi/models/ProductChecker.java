@@ -1,4 +1,4 @@
-package com.webapp.restapi.math;
+package com.webapp.restapi.models;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Narrative;
@@ -7,21 +7,22 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(SerenityRunner.class)
-@Narrative(text={"Test arithmetic"})
-public class WhenAddingNumbers {
+@Narrative(text={"Test product"})
+
+public class ProductChecker {
 
     @Steps
-    MathWizSteps calculator;
+    Product product;
 
     @Test
-    public void addingSums() {
+    public void showProduct() {
         // Given
-        calculator.startsWith(1);
+        product.getId();
 
         // When
-        calculator.adds(2);
+        product.setId("007");
 
         // Then
-        calculator.shouldHave(3);
+        product.getId();
     }
 }
