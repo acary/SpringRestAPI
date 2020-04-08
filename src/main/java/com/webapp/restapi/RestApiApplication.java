@@ -6,6 +6,12 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.cloud.config.java.AbstractCloudConfig;
+import org.springframework.cloud.config.java.ServiceConnectionFactory;
+import org.springframework.cloud.config.java.ServiceScan;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.mongodb.MongoDbFactory;
 
 @SpringBootApplication
 public class RestApiApplication extends SpringBootServletInitializer implements CommandLineRunner {

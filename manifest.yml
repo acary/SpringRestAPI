@@ -1,10 +1,14 @@
 ---
       applications:
-          - name: springrestapi
+          - name: springbootreact
             buildpack: https://github.com/cloudfoundry/java-buildpack
             memory: 1G
             instances: 1
-        # Because the URL will be http://springrestapi.cfapps.io/
-            host: springrestapi
+            host: springbootreact
             domain: cfapps.io
             path: build/libs/restapi-0.0.1-SNAPSHOT.jar
+          - name: frontend
+            path: ./frontend
+            buildpack: https://github.com/cloudfoundry/nodejs-buildpack
+            memory: 1G
+            instances: 1

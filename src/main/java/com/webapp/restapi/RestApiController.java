@@ -14,7 +14,7 @@ import com.webapp.restapi.services.ProductService;
 public class RestApiController {
 
     // Index
-    @GetMapping("/")
+    @GetMapping("/project")
     public Task project() {
 
         final Task project = new Task.Builder()
