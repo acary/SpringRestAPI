@@ -41,12 +41,15 @@ class Edit extends Component {
       <div class="container">
         <div class="panel panel-default">
           <div class="panel-heading">
+          <br></br>
             <h3 class="panel-title">
-              EDIT Contact
+                Edit User
             </h3>
           </div>
           <div class="panel-body">
-            <h4><Link to={`/show/${this.state.contact.id}`}><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Contact List</Link></h4>
+            <Link to="/contact"><button class="my-2 mx-1 btn btn-info">View Users</button></Link>
+            <Link to="/"><button class="my-2 btn btn-info">Return to Dashboard</button></Link>
+
             <form onSubmit={this.onSubmit}>
               <div class="form-group">
                 <label for="name">Name:</label>
@@ -68,7 +71,7 @@ class Edit extends Component {
                 <label for="description">Email:</label>
                 <input type="email" class="form-control" name="email" value={this.state.contact.email} onChange={this.onChange} placeholder="Email Address" />
               </div>
-              <button type="submit" class="btn btn-default">Update</button>
+              <button type="submit" class="my-2 btn btn-success">Update User</button>
             </form>
           </div>
         </div>

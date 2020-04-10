@@ -32,12 +32,14 @@ class Show extends Component {
       <div class="container">
         <div class="panel panel-default">
           <div class="panel-heading">
+            <br></br>
             <h3 class="panel-title">
-              Contact Details
+              Details
             </h3>
           </div>
           <div class="panel-body">
-            <h4><Link to="/"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Contacts List</Link></h4>
+            <Link to="/contact"><button class="my-2 mx-1 btn btn-info">View Users</button></Link>
+            <Link to="/"><button class="my-2 btn btn-info">Return to Dashboard</button></Link>
             <dl>
               <dt>Name:</dt>
               <dd>{this.state.contact.name}</dd>
