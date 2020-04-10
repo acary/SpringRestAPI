@@ -44,9 +44,8 @@ class Create extends Component {
             </h3>
           </div>
           <div class="panel-body">
-            <Link to="/"><button class="my-2 mx-2 btn btn-info">View Users</button></Link>
-            <Link to="/"><button class="my-2 btn btn-info">Return to Dashboard</button></Link>
-            
+            <Link to="/"><button class="my-2 mx-2 btn btn-info">Return to Dashboard</button></Link>
+
             <form onSubmit={this.onSubmit}>
               <div class="form-group">
                 <label for="isbn">Name</label>
