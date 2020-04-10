@@ -38,34 +38,37 @@ class Create extends Component {
       <div class="container">
         <div class="panel panel-default">
           <div class="panel-heading">
+            <br></br>
             <h3 class="panel-title">
-              ADD CONTACT
+              Create User
             </h3>
           </div>
           <div class="panel-body">
-            <h4><Link to="/"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Contacts List</Link></h4>
+            <Link to="/"><button class="my-2 mx-2 btn btn-info">View Users</button></Link>
+            <Link to="/"><button class="my-2 btn btn-info">Return to Dashboard</button></Link>
+            
             <form onSubmit={this.onSubmit}>
               <div class="form-group">
-                <label for="isbn">Name:</label>
+                <label for="isbn">Name</label>
                 <input type="text" class="form-control" name="name" value={name} onChange={this.onChange} placeholder="Name" />
               </div>
               <div class="form-group">
-                <label for="title">Address:</label>
+                <label for="title">Address</label>
                 <input type="text" class="form-control" name="address" value={address} onChange={this.onChange} placeholder="Address" />
               </div>
               <div class="form-group">
-                <label for="author">City:</label>
+                <label for="author">City</label>
                 <input type="text" class="form-control" name="city" value={city} onChange={this.onChange} placeholder="City" />
               </div>
               <div class="form-group">
-                <label for="published_date">Phone:</label>
+                <label for="published_date">Phone</label>
                 <input type="text" class="form-control" name="phone" value={phone} onChange={this.onChange} placeholder="Phone Number" />
               </div>
               <div class="form-group">
-                <label for="publisher">Email:</label>
+                <label for="publisher">Email</label>
                 <input type="email" class="form-control" name="email" value={email} onChange={this.onChange} placeholder="Email Address" />
               </div>
-              <button type="submit" class="btn btn-default">Submit</button>
+              <button type="submit" class="btn btn-primary btn-default">Create User</button>
             </form>
           </div>
         </div>

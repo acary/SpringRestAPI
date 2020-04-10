@@ -26,7 +26,7 @@ public class RestApiController {
     }
 
     // Task
-    @GetMapping("/task")
+    @GetMapping("/task_all")
     public Task task() {
 
         final Task task = new Task.Builder()
