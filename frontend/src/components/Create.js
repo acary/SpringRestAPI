@@ -26,7 +26,7 @@ class Create extends Component {
 
     const { name, address, city, phone, email } = this.state;
 
-    axios.post('/contacts', { name, address, city, phone, email })
+    axios.post('/user', { name, address, city, phone, email })
       .then((result) => {
         this.props.history.push("/")
       });

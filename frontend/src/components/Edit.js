@@ -12,7 +12,7 @@ class Edit extends Component {
   }
 
   componentDidMount() {
-    axios.get('/contacts/'+this.props.match.params.id)
+    axios.get('/user/'+this.props.match.params.id)
       .then(res => {
         this.setState({ contact: res.data });
         console.log(this.state.contact);
@@ -30,7 +30,7 @@ class Edit extends Component {
 
     const { name, address, city, postalCode, phone } = this.state.contact;
 
-    axios.put('/contacts/'+this.props.match.params.id, { name, address, city, postalCode, phone })
+    axios.put('/user/'+this.props.match.params.id, { name, address, city, postalCode, phone })
       .then((result) => {
         this.props.history.push("/show/"+this.props.match.params.id)
       });

@@ -16,24 +16,24 @@ public class ContactController {
     @Autowired
     ContactRepository contactRepository;
 
-    @RequestMapping(method=RequestMethod.GET, value="/contacts")
+    @RequestMapping(method=RequestMethod.GET, value="/user")
     public Iterable<Contact> contact() {
         return contactRepository.findAll();
     }
 
-    @RequestMapping(method=RequestMethod.POST, value="/contacts")
+    @RequestMapping(method=RequestMethod.POST, value="/user")
     public Contact save(@RequestBody Contact contact) {
         contactRepository.save(contact);
 
         return contact;
     }
 
-    @RequestMapping(method=RequestMethod.GET, value="/contacts/{id}")
+    @RequestMapping(method=RequestMethod.GET, value="/user/{id}")
     public Optional<Contact> show(@PathVariable String id) {
         return contactRepository.findById(id);
     }
 
-    @RequestMapping(method=RequestMethod.PUT, value="/contacts/{id}")
+    @RequestMapping(method=RequestMethod.PUT, value="/user/{id}")
     public Contact update(@PathVariable String id, @RequestBody Contact contact) {
         Optional<Contact> optcontact = contactRepository.findById(id);
         Contact c = optcontact.get();
@@ -51,7 +51,7 @@ public class ContactController {
         return c;
     }
 
-    @RequestMapping(method=RequestMethod.DELETE, value="/contacts/{id}")
+    @RequestMapping(method=RequestMethod.DELETE, value="/user/{id}")
     public String delete(@PathVariable String id) {
         Optional<Contact> optcontact = contactRepository.findById(id);
         Contact contact = optcontact.get();

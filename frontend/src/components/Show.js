@@ -12,7 +12,7 @@ class Show extends Component {
   }
 
   componentDidMount() {
-    axios.get('/contacts/'+this.props.match.params.id)
+    axios.get('/user/'+this.props.match.params.id)
       .then(res => {
         this.setState({ contact: res.data });
         console.log(this.state.contact);
@@ -21,7 +21,7 @@ class Show extends Component {
 
   delete(id){
     console.log(id);
-    axios.delete('/contacts/'+id)
+    axios.delete('/user/'+id)
       .then((result) => {
         this.props.history.push("/")
       });
@@ -38,7 +38,7 @@ class Show extends Component {
             </h3>
           </div>
           <div class="panel-body">
-            <Link to="/contact"><button class="my-2 mx-1 btn btn-info">View Users</button></Link>
+            <Link to="/user"><button class="my-2 mx-1 btn btn-info">View Users</button></Link>
             <Link to="/"><button class="my-2 btn btn-info">Return to Dashboard</button></Link>
             <dl>
               <dt>Name</dt>
