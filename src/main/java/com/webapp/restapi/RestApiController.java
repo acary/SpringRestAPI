@@ -13,30 +13,6 @@ import com.webapp.restapi.services.ProductService;
 @RestController
 public class RestApiController {
 
-    // Index
-    @GetMapping("/project")
-    public Task project() {
-
-        final Task project = new Task.Builder()
-                .data("Automation Test Suite for REST APIs")
-                .num(001)
-                .build();
-
-        return project;
-    }
-
-    // Task
-    @GetMapping("/task_all")
-    public Task task() {
-
-        final Task task = new Task.Builder()
-                .data("First")
-                .num(001)
-                .build();
-
-        return task;
-    }
-
     // Hello
     @GetMapping("/hello")
     public String hello() {
@@ -54,7 +30,6 @@ public class RestApiController {
     }
 
     // Sale
-
     @GetMapping("/sale")
     public Sale sale() {
 

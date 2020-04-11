@@ -1,32 +1,51 @@
 package com.webapp.restapi.models;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "tasks")
 public class Task {
+    @Id
+    String id;
+    String name;
+    String status;
 
-    public final String data;
-    public final int num;
-
-    public Task(String data, int num) {
-        this.data = data;
-        this.num = num;
+    public Task() {
     }
 
-    public static class Builder {
-        private String data;
-        private int num;
+    public Task(String name, String status) {
+        this.name = name;
+        this.status = status;
+    }
 
-        public Builder data(String data) {
-            this.data = data;
-            return this;
-        }
+    public String getId() {
 
-        public Builder num(int num) {
-            this.num = num;
-            return this;
-        }
+        return id;
+    }
 
-        public Task build() {
-            return new Task(data, num); // etc
-        }
+    public void setId(String id) {
+
+        this.id = id;
+    }
+
+    public String getName() {
+
+        return name;
+    }
+
+    public void setName(String name) {
+
+        this.name = name;
+    }
+
+    public String getStatus() {
+
+        return status;
+    }
+
+    public void setStatus(String status) {
+
+        this.status = status;
     }
 
     public static boolean check() {
