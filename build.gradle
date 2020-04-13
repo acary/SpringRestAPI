@@ -73,10 +73,10 @@ dependencies {
 gradle.startParameter.continueOnFailure = true
 
 test {
-	useJUnitPlatform()
-	testLogging {
-		events "passed", "skipped", "failed"
-	}
+//	useJUnitPlatform()
+//	testLogging {
+//		events "passed", "skipped", "failed"
+//	}
 
 	testLogging.showStandardStreams = true
 	systemProperties System.getProperties()

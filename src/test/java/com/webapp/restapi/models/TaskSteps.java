@@ -13,4 +13,27 @@ public class TaskSteps {
         task.check();
     }
 
+    @Step
+    public void isAdded() {
+
+        task.check();
+    }
+
+    @Step
+    public void isCompleted() {
+
+        task.check();
+    }
+
+    @Step
+    public void isEdited() {
+
+        task.check();
+    }
+
+    @Step
+    public void isDeleted() {
+
+        task.check();
+    }
 }
