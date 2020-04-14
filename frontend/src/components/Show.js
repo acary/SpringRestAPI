@@ -38,8 +38,8 @@ class Show extends Component {
             </h3>
           </div>
           <div class="panel-body">
-            <Link to="/user"><button class="my-2 mx-1 btn btn-info">View Users</button></Link>
-            <Link to="/"><button class="my-2 btn btn-info">Return to Dashboard</button></Link>
+            <Link to="/user"><button id="view_users" class="my-2 mx-1 btn btn-info">View Users</button></Link>
+            <Link to="/"><button id="dashboard" class="my-2 btn btn-info">Return to Dashboard</button></Link>
             <dl>
               <dt>Name</dt>
               <dd>{this.state.contact.name}</dd>

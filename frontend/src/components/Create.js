@@ -44,7 +44,7 @@ class Create extends Component {
             </h3>
           </div>
           <div class="panel-body">
-            <Link to="/"><button class="my-2 mx-2 btn btn-info">Return to Dashboard</button></Link>
+            <Link to="/"><button id="dashboard" class="my-2 mx-2 btn btn-info">Return to Dashboard</button></Link>
 
             <form onSubmit={this.onSubmit}>
               <div class="form-group">
@@ -67,7 +67,7 @@ class Create extends Component {
                 <label for="publisher">Email</label>
                 <input type="email" class="form-control" name="email" value={email} onChange={this.onChange} placeholder="Email Address" />
               </div>
-              <button type="submit" class="btn btn-primary btn-default">Create User</button>
+              <button id="create_user" type="submit" class="btn btn-primary btn-default">Create User</button>
             </form>
           </div>
         </div>
