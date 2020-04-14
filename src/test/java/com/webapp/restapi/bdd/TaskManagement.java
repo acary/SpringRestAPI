@@ -1,4 +1,4 @@
-package com.webapp.restapi.models;
+package com.webapp.restapi.bdd;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Narrative;

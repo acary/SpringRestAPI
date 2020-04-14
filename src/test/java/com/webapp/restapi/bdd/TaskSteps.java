@@ -1,5 +1,6 @@
-package com.webapp.restapi.models;
+package com.webapp.restapi.bdd;
 
+import com.webapp.restapi.models.Task;
 import net.thucydides.core.annotations.Step;
 import static org.assertj.core.api.Assertions.assertThat;
 

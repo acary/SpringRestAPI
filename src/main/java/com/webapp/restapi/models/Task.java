@@ -52,4 +52,8 @@ public class Task {
         boolean b = true;
         return b;
     }
+
+    public boolean add(Object anyString) {
+        return true;
+    }
 }
