@@ -43,6 +43,8 @@ public class ContactController {
             c.setAddress(contact.getAddress());
         if(contact.getCity() != null)
             c.setCity(contact.getCity());
+        if(contact.getState() != null)
+            c.setState(contact.getState());
         if(contact.getPhone() != null)
             c.setPhone(contact.getPhone());
         if(contact.getEmail() != null)

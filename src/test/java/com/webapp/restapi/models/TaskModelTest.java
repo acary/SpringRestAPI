@@ -1,8 +1,9 @@
-package com.webapp.restapi.controller;
+package com.webapp.restapi.models;
 
 import com.webapp.restapi.models.Task;
 import com.webapp.restapi.repository.TaskRepository;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
@@ -17,9 +18,9 @@ import static org.mockito.Mockito.when;
 
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(value=TaskControllerTest.class)
+@WebMvcTest(value=TaskModelTest.class)
 
-public class TaskControllerTest {
+public class TaskModelTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -30,27 +31,28 @@ public class TaskControllerTest {
 
     @Test
     public void testGetTasks() throws Exception {
-        Task mockTask = new Task();
+        when(task.getId()).thenReturn("001");
+    }
+
+    @Test
+    public void testSetTasks() throws Exception {
+        Task mockTask = new Task("File expense report", "Requested");
         mockTask.setId("001");
-        mockTask.setName("File expense report");
-        mockTask.setStatus("Requested");
+        mockTask.getId();
+        mockTask.setName("TPS Report");
+        mockTask.getName();
+        mockTask.setStatus("In Process");
+        mockTask.getStatus();
+        mockTask.check();
 
         Task taskMock = Mockito.mock(Task.class);
-        when(taskMock.add(anyString())).thenReturn(false);
+        when(taskMock.getId()).thenReturn("001");
+        Assertions.assertEquals("001", taskMock.getId());
 
-        boolean added = taskMock.add(1);
-        assertThat(added, is(true));
+        when(taskMock.getName()).thenReturn("File expense report");
+        Assertions.assertEquals("File expense report", taskMock.getName());
+
+        when(taskMock.getStatus()).thenReturn("Requested");
+        Assertions.assertEquals("Requested", taskMock.getStatus());
     }
-
-    private void assertThat(boolean added, Object o) {
-    }
-
-    private Object is(boolean b) {
-        return true;
-    }
-
-    private Object anyString() {
-        return "true";
-    }
-
 }

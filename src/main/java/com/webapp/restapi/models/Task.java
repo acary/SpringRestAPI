@@ -10,9 +10,6 @@ public class Task {
     String name;
     String status;
 
-    public Task() {
-    }
-
     public Task(String name, String status) {
         this.name = name;
         this.status = status;
@@ -51,9 +48,5 @@ public class Task {
     public static boolean check() {
         boolean b = true;
         return b;
-    }
-
-    public boolean add(Object anyString) {
-        return true;
     }
 }

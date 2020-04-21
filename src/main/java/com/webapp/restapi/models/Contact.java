@@ -10,16 +10,15 @@ public class Contact {
     String name;
     String address;
     String city;
+    String state;
     String phone;
     String email;
 
-    public Contact() {
-    }
-
-    public Contact(String name, String address, String city, String phone, String email) {
+    public Contact(String name, String address, String city, String state, String phone, String email) {
         this.name = name;
         this.address = address;
         this.city = city;
+        this.state = state;
         this.phone = phone;
         this.email = email;
     }
@@ -54,6 +53,14 @@ public class Contact {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 
     public String getPhone() {

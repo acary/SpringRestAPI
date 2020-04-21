@@ -68,6 +68,7 @@ dependencies {
 	}
 
 	runtimeOnly project(':frontend')
+    implementation 'junit:junit:4.12'
 }
 
 gradle.startParameter.continueOnFailure = true
