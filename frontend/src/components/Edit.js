@@ -28,9 +28,9 @@ class Edit extends Component {
   onSubmit = (e) => {
     e.preventDefault();
 
-    const { name, address, city, postalCode, phone } = this.state.contact;
+    const { name, address, city, state, postalCode, phone } = this.state.contact;
 
-    axios.put('/user/'+this.props.match.params.id, { name, address, city, postalCode, phone })
+    axios.put('/user/'+this.props.match.params.id, { name, address, city, state, postalCode, phone })
       .then((result) => {
         this.props.history.push("/show/"+this.props.match.params.id)
       });
@@ -47,7 +47,7 @@ class Edit extends Component {
             </h3>
           </div>
           <div class="panel-body">
-            <Link to="/contact"><button class="my-2 mx-1 btn btn-info">View Users</button></Link>
+            <Link to="/user"><button class="my-2 mx-1 btn btn-info">View Users</button></Link>
             <Link to="/"><button class="my-2 btn btn-info">Return to Dashboard</button></Link>
 
             <form onSubmit={this.onSubmit}>
@@ -56,19 +56,23 @@ class Edit extends Component {
                 <input type="text" class="form-control" name="name" value={this.state.contact.name} onChange={this.onChange} placeholder="Name" />
               </div>
               <div class="form-group">
-                <label for="title">Address:</label>
+                <label for="address">Address:</label>
                 <input type="text" class="form-control" name="address" value={this.state.contact.address} onChange={this.onChange} placeholder="Address" />
               </div>
               <div class="form-group">
-                <label for="author">City:</label>
+                <label for="city">City:</label>
                 <input type="text" class="form-control" name="city" value={this.state.contact.city} onChange={this.onChange} placeholder="City" />
               </div>
               <div class="form-group">
-                <label for="published_date">Phone Number:</label>
+                <label for="state">State:</label>
+                <input type="text" class="form-control" name="state" value={this.state.contact.state} onChange={this.onChange} placeholder="State" />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number:</label>
                 <input type="text" class="form-control" name="phone" value={this.state.contact.phone} onChange={this.onChange} placeholder="Phone Number" />
               </div>
               <div class="form-group">
-                <label for="description">Email:</label>
+                <label for="email">Email:</label>
                 <input type="email" class="form-control" name="email" value={this.state.contact.email} onChange={this.onChange} placeholder="Email Address" />
               </div>
               <button type="submit" class="my-2 btn btn-success">Update User</button>

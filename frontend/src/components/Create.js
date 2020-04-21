@@ -11,6 +11,7 @@ class Create extends Component {
       name: '',
       address: '',
       city: '',
+      state: '',
       phone: '',
       email: ''
     };
@@ -24,16 +25,16 @@ class Create extends Component {
   onSubmit = (e) => {
     e.preventDefault();
 
-    const { name, address, city, phone, email } = this.state;
+    const { name, address, city, state, phone, email } = this.state;
 
-    axios.post('/user', { name, address, city, phone, email })
+    axios.post('/user', { name, address, city, state, phone, email })
       .then((result) => {
         this.props.history.push("/")
       });
   }
 
   render() {
-    const { name, address, city, phone, email } = this.state;
+    const { name, address, city, state, phone, email } = this.state;
     return (
       <div class="container">
         <div class="panel panel-default">
@@ -48,23 +49,27 @@ class Create extends Component {
 
             <form onSubmit={this.onSubmit}>
               <div class="form-group">
-                <label for="isbn">Name</label>
+                <label for="name">Name</label>
                 <input type="text" class="form-control" name="name" value={name} onChange={this.onChange} placeholder="Name" />
               </div>
               <div class="form-group">
-                <label for="title">Address</label>
+                <label for="address">Address</label>
                 <input type="text" class="form-control" name="address" value={address} onChange={this.onChange} placeholder="Address" />
               </div>
               <div class="form-group">
-                <label for="author">City</label>
+                <label for="city">City</label>
                 <input type="text" class="form-control" name="city" value={city} onChange={this.onChange} placeholder="City" />
               </div>
               <div class="form-group">
-                <label for="published_date">Phone</label>
+                <label for="state">State</label>
+                <input type="text" class="form-control" name="state" value={state} onChange={this.onChange} placeholder="State" />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone</label>
                 <input type="text" class="form-control" name="phone" value={phone} onChange={this.onChange} placeholder="Phone Number" />
               </div>
               <div class="form-group">
-                <label for="publisher">Email</label>
+                <label for="email">Email</label>
                 <input type="email" class="form-control" name="email" value={email} onChange={this.onChange} placeholder="Email Address" />
               </div>
               <button id="create_user" type="submit" class="btn btn-primary btn-default">Create User</button>
