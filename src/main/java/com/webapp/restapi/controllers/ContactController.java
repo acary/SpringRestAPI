@@ -3,6 +3,8 @@ package com.webapp.restapi.controllers;
 import com.webapp.restapi.models.Contact;
 import com.webapp.restapi.repository.ContactRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
