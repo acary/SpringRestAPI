@@ -8,7 +8,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(SerenityRunner.class)
-@Narrative(text={"Test tasks"})
+@Narrative(text={"Task tests"})
 
 public class TaskManagement {
 
@@ -16,8 +16,8 @@ public class TaskManagement {
     TaskSteps task;
 
     @Test
-    @Title("Adding a task updates the database")
-    public void taskAdded() {
+    @Title("Task Dashboard")
+    public void taskDashboard() {
 
         // Given
         task.checkExists();
@@ -30,22 +30,50 @@ public class TaskManagement {
     }
 
     @Test
-    @Title("Marking a task completed changes status to: completed")
-    public void taskCompleted() {
+    @Title("View Tasks")
+    public void viewTasks() {
 
         // Given
         task.checkExists();
 
         // When
-        task.isCompleted();
+        task.isAdded();
 
         // Then
         task.checkExists();
     }
 
     @Test
-    @Title("Editing a task updates the item attributes")
-    public void taskEdited() {
+    @Title("Add Task")
+    public void addTask() {
+
+        // Given
+        task.checkExists();
+
+        // When
+        task.isAdded();
+
+        // Then
+        task.checkExists();
+    }
+
+    @Test
+    @Title("Task Details")
+    public void taskDetails() {
+
+        // Given
+        task.checkExists();
+
+        // When
+        task.isAdded();
+
+        // Then
+        task.checkExists();
+    }
+
+    @Test
+    @Title("Edit Task")
+    public void editTask() {
 
         // Given
         task.checkExists();
@@ -58,7 +86,21 @@ public class TaskManagement {
     }
 
     @Test
-    @Title("Deleting a task removes it from the database")
+    @Title("Mark Complete")
+    public void markComplete() {
+
+        // Given
+        task.checkExists();
+
+        // When
+        task.isCompleted();
+
+        // Then
+        task.checkExists();
+    }
+
+    @Test
+    @Title("Delete Task")
     public void taskDeleted() {
 
         // Given
@@ -68,6 +110,6 @@ public class TaskManagement {
         task.isDeleted();
 
         // Then
-        task.checkExists();
+        task.checkNotExists();
     }
 }
