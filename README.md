@@ -46,16 +46,6 @@ Example endpoints for testing:
 
 ##### http://reactboot.cfapps.io/
 - '/' 
-- '/task'
-- '/task_add'
-- '/task_show/:id'
-- '/task_edit/:id'
-- '/user' GET, POST
-- '/edit/:id'
-- '/create'
-- '/show/:id'
+- '/tasks'
+- '/users'
 
-#### Other endpoints:
-1. GET: ```localhost:8080/hello```
-2. GET: ```localhost:8080/greeting```
-3. GET: ```localhost:8080/hotels/all```
