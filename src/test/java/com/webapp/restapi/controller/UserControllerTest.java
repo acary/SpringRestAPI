@@ -1,8 +1,8 @@
 package com.webapp.restapi.controller;
 
-import com.webapp.restapi.controllers.ContactController;
-import com.webapp.restapi.repository.ContactRepository;
-import com.webapp.restapi.models.Contact;
+import com.webapp.restapi.controllers.UserController;
+import com.webapp.restapi.repository.UserRepository;
+import com.webapp.restapi.models.User;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;
@@ -35,13 +35,13 @@ public class UserControllerTest {
     private MockMvc mvc;
 
     @Mock
-    private ContactRepository ContactRepository;
+    private UserRepository userRepository;
 
     @InjectMocks
-    private ContactController contactController;
+    private UserController userController;
 
     // This object will be magically initialized by the initFields method below.
-    private JacksonTester<Contact> jsonTask;
+    private JacksonTester<User> jsonTask;
 
     @Before
     public void setup() {
@@ -50,7 +50,7 @@ public class UserControllerTest {
         // Initializes the JacksonTester
         JacksonTester.initFields(this, new ObjectMapper());
         // MockMvc standalone approach
-        mvc = MockMvcBuilders.standaloneSetup(contactController)
+        mvc = MockMvcBuilders.standaloneSetup(userController)
                 .build();
     }
 

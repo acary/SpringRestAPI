@@ -55,10 +55,22 @@ public class TaskControllerTest {
     }
 
     @Test
-    public void headerIsPresent() throws Exception {
+    public void getAllTasksHeaderIsPresent() throws Exception {
         // when
         MockHttpServletResponse response = mvc.perform(
                 get("/tasks")
+                        .accept(MediaType.APPLICATION_JSON))
+                .andReturn().getResponse();
+
+        // then
+        assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
+    }
+
+    @Test
+    public void getOneTaskHeaderIsPresent() throws Exception {
+        // when
+        MockHttpServletResponse response = mvc.perform(
+                get("/tasks" + "/5e910aa9b837a54284d01ed1")
                         .accept(MediaType.APPLICATION_JSON))
                 .andReturn().getResponse();
 

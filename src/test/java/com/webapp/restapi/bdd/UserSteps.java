@@ -1,17 +1,17 @@
 package com.webapp.restapi.bdd;
 
-import com.webapp.restapi.models.Contact;
-import com.webapp.restapi.repository.ContactRepository;
+import com.webapp.restapi.models.User;
+import com.webapp.restapi.repository.UserRepository;
 import net.thucydides.core.annotations.Step;
 import static org.assertj.core.api.Assertions.assertThat;
 
-import com.webapp.restapi.controllers.ContactController;
+import com.webapp.restapi.controllers.UserController;
 import org.assertj.core.api.Assertions;
 
 public class UserSteps {
 
     // Define the object under test
-    Contact user = new Contact(
+    User user = new User(
             "Adam",
             "123 Main",
             "Austin",

@@ -1,9 +1,9 @@
 package com.webapp.restapi.repository;
-import com.webapp.restapi.models.Contact;
+import com.webapp.restapi.models.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-public interface ContactRepository extends CrudRepository<Contact, String> {
+public interface UserRepository extends CrudRepository<User, String> {
     @Override
-    void delete(Contact deleted);
+    void delete(User deleted);
 }
