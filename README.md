@@ -19,8 +19,8 @@ See: `application.properties` file in `src/main/resources` for connection string
 Run tests in a separate terminal window.
 1. From project folder, run: ```gradle test aggregate``` (or ```./gradlew test```)
 2. View Serenity report (see location printed to terminal window): ```file:///.../restapi/target/site/serenity/index.html```
-3. Selenium: TBD
-4. JUnit: TBD
+3. Selenium 2
+4. JUnit 4.12
 
 ## Frontend: Update React app:
 Note: `build.gradle` file includes Node plugin (built by project gradle)
@@ -49,3 +49,6 @@ Example endpoints for testing:
 - '/tasks'
 - '/users'
 
+##### Documentation
+
+- Spring Boot: https://spring.io/guides/gs/spring-boot/
