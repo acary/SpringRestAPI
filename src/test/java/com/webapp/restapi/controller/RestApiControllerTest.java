@@ -47,6 +47,8 @@ public class RestApiControllerTest {
         //Verify request succeed
         Assert.assertEquals(200, result.getStatusCodeValue());
         Assert.assertEquals(true, result.getBody().contains("id"));
+        Assert.assertEquals(true, result.getBody().contains("name"));
+        Assert.assertEquals(true, result.getBody().contains("status"));
     }
 
     @Test
@@ -63,5 +65,4 @@ public class RestApiControllerTest {
         Assert.assertEquals(200, result.getStatusCodeValue());
         Assert.assertEquals(true, result.getBody().contains("5e910aa9b837a54284d01ed1"));
     }
-
 }
