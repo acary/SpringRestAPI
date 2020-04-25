@@ -1,0 +1,25 @@
+plugins {
+    id "com.moowork.node"
+}
+
+apply plugin: 'base'
+apply plugin: "com.moowork.node"
+
+node {
+    version = "10.15.3"
+    download = true
+}
+
+task bundle(type: NpmTask, dependsOn: npmInstall) {
+    args = ['run', 'build']
+}
+
+assemble.dependsOn(bundle)
+
+repositories.whenObjectAdded {
+    if (it instanceof IvyArtifactRepository) {
+        metadataSources {
+            artifact()
+        }
+    }
+}
